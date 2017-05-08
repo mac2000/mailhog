@@ -2,7 +2,11 @@
 
 # Build
 
-TODO describe how to build fresh executable
+Should be done in linux container (but may be in future will be able to reproduce in windows, e.g. there is [golang:nanoserver](https://hub.docker.com/_/golang/) image)
+
+Actually what we are doing here is reproducing build steps taken from original [mailhog](https://hub.docker.com/r/mailhog/mailhog/~/dockerfile/) image
+
+docker run -it --rm -v ${pwd}:/code -e GOOS=windows -e GOARCH=amd64 golang bash -c "go get github.com/mailhog/MailHog; cp /go/bin/windows_amd64/MailHog.exe /code/mailhog2.exe"
 
 # Build
 
